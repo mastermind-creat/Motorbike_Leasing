@@ -69,7 +69,7 @@ include 'includes/layout.php';
                     <input type="number" class="form-control" name="year" min="1900" max="<?= date('Y') ?>" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Price per Day ($)</label>
+                    <label class="form-label">Price per Day (Ksh.)</label>
                     <input type="number" class="form-control" name="price" min="0" step="0.01" required>
                 </div>
             </div>

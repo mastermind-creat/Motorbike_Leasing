@@ -1,5 +1,5 @@
 <?php
-require_once "../includes/db.php";
+require_once "includes/db.php";
 
 // Function to check existing admins
 function checkExistingAdmins() {
@@ -29,9 +29,9 @@ function checkExistingAdmins() {
 
 // Set admin details with different values
 $username = "superadmin";  // Changed from 'admin'
-$name = "Super Administrator";
-$email = "superadmin@motor.com";  // Changed from 'admin@motor.com'
-$password = "super123";  // Changed from 'admin123'
+$name = "Faith Ojino";
+$email = "admin@motor.com";  // Changed from 'admin@motor.com'
+$password = "faith";  // Changed from 'admin123'
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 $role = "admin";
 

@@ -38,16 +38,16 @@ if (isset($_POST['submit'])) {
         if (!file_exists($target_dir)) {
             mkdir($target_dir, 0777, true);
         }
-        
+
         // Delete old image
         if ($bike['image'] && file_exists("../" . $bike['image'])) {
             unlink("../" . $bike['image']);
         }
-        
+
         $file_extension = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
         $new_filename = uniqid() . '.' . $file_extension;
         $target_file = $target_dir . $new_filename;
-        
+
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             $image = 'uploads/bikes/' . $new_filename;
         }
@@ -92,7 +92,7 @@ include 'includes/layout.php';
                     <input type="number" class="form-control" name="year" min="1900" max="<?= date('Y') ?>" value="<?= htmlspecialchars($bike['year']) ?>" required>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label class="form-label">Price per Day ($)</label>
+                    <label class="form-label">Price per Day (ksh.)</label>
                     <input type="number" class="form-control" name="price" min="0" step="0.01" value="<?= htmlspecialchars($bike['price']) ?>" required>
                 </div>
             </div>
@@ -114,9 +114,9 @@ include 'includes/layout.php';
             <div class="mb-3">
                 <label class="form-label">Current Image</label>
                 <div class="mb-2">
-                    <img src="../<?= htmlspecialchars($bike['image']) ?>" 
-                         alt="<?= htmlspecialchars($bike['brand'] . ' ' . $bike['model']) ?>"
-                         class="rounded" style="max-width: 200px;">
+                    <img src="../<?= htmlspecialchars($bike['image']) ?>"
+                        alt="<?= htmlspecialchars($bike['brand'] . ' ' . $bike['model']) ?>"
+                        class="rounded" style="max-width: 200px;">
                 </div>
                 <label class="form-label">Change Image (Optional)</label>
                 <input type="file" class="form-control" name="image" accept="image/*">
@@ -136,4 +136,5 @@ include 'includes/layout.php';
 </div>
 
 </body>
-</html> 
+
+</html>
